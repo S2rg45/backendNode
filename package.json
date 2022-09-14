@@ -1,0 +1,46 @@
+{
+    "name": "rocketfly",
+    "version": "1.0.0",
+    "description": "Api pockemon ",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon run index.js",
+        "postinstall": "npm run build",
+        "start": "node index.js",
+        "build": "NODE_ENV=production"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:S2rg45/rocketfly.git"
+    },
+    "author": "Sergio Moreno",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://git@github.com:S2rg45/rocketfly.git/issues"
+    },
+    "homepage": "https://git@github.com:S2rg45/rocketfly.git#readme",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "bcrypt": "^5.0.1",
+        "body-parser": "^1.19.0",
+        "dotenv": "^10.0.0",
+        "env-cmd": "^10.1.0",
+        "express": "^4.17.1",
+        "firebase": "^8.6.8",
+        "firebase-admin": "^9.10.0",
+        "firebase-tools": "^9.14.0",
+        "form-data": "^4.0.0",
+        "jsonwebtoken": "^8.5.1",
+        "moment": "^2.29.1",
+        "mongoose": "^6.6.0",
+        "morgan": "^1.10.0",
+        "nodemailer": "^6.6.3",
+        "nodemon": "^2.0.7",
+        "passport": "^0.4.1",
+        "pug": "^3.0.2",
+        "xlsx": "^0.17.0"
+    },
+    "devDependencies": {
+        "clean-css-cli": "^5.3.0"
+    }
+}
