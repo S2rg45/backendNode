@@ -1,6 +1,6 @@
 'use-strict'
 
-exports.success = (err, req, res, message, status) => {
+exports.success = (req, res, message, status) => {
     const statusCode = status || 200
     const statusMessage = message || ''
     const statusErr = err || 'True'

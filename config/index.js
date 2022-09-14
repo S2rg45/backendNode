@@ -9,6 +9,10 @@ const config = {
     },
     jwt: {
         secret: process.env.JWTSECRET
+    },
+    pokemon: {
+        url_all: process.env.URL_ALL_POKEMONS,
+        url_id: process.env.URL_ID_POKEMONS
     }
 }
 

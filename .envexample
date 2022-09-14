@@ -10,3 +10,6 @@ DATABASE=PokeUser
 COLLECTION=User
 JWTSECRET=ZXNwZXJ3ZW1vcyBxdWUgbDRncjJtNHMgcDFzMXIgbDEgcHI1MmIxIGRlIHI0Y2sydDM=
 TYPEDB=MONGO
+
+URL_ALL_POKEMONS=https://pokeapi.co/api/v2/pokemon?limit=
+URL_ID_POKEMONS=https://pokeapi.co/api/v2/pokemon/

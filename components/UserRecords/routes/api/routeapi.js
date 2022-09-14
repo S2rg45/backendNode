@@ -2,13 +2,14 @@
 
 const { Router } = require('express')
 const router = Router()
-const RegisterUser = require('../../services/register')
+const RegisterUser = require('../../services')
 const secure = require('../../auth/secure')
 const utils = require('../../../utils/response')
 
 const registerUser = new RegisterUser()
 
-router.post("/pokemon", secure('user'), users)
+router.post("/pokemonAll", secure('all'), pokemonAll)
+router.post("/pokemonId", secure('id'), pokemonId)
 router.post("/login", login)
 router.post("/register", register)
 
@@ -40,10 +41,22 @@ async function login(req, res) {
 }
 
 
-async function users(req, res, next) {
-    const { body: searchId } = req
+async function pokemonAll(req, res, next) {
+    const { body: allPokemon } = req
     try {
-        const usersGet = await registerUser.getRegister({ searchId })
+        const listAllPokemon = await registerUser.allPokemons({ allPokemon })
+        if (listAllPokemon !== undefined) {
+            return res.json({ messages: usersGet })
+        }
+    } catch (err) {
+        return utils.error(err, req, res, "Falla", 401)
+    }
+}
+
+async function pokemonId(req, res, next) {
+    const { body: idPokemon } = req
+    try {
+        const usersGet = await registerUser.idPokemons({ idPokemon })
         res.json({ messages: usersGet })
     } catch (err) {
         return utils.error(err, req, res, "Falla", 401)
