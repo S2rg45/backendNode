@@ -4,7 +4,8 @@ const config = {
     port: process.env.PORT,
     mongo: {
         uri: process.env.URI_DATABASE,
-        collection: process.env.COLLECTION,
+        collection_shipping: process.env.COLLECTION_SHIPPING,
+        collection_shipping_order: process.env.COLLECTION_SHIPPING_ORDER,
         database: process.env.DATABASE,
     },
     jwt: {

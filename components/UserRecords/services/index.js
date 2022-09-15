@@ -1,6 +1,7 @@
 'use-stritct'
 
-const MongoModule = require('../store/index')
+const MongooseModule = require('../store/mongose/index')
+const MongoModule = require('../store/mongoSelect')
 const bcrypt = require('bcrypt')
 const https = require('https');
 const auth = require('../auth/index')
@@ -12,7 +13,7 @@ class RegisterUser {
 
     async createRegister({ user }) {
         const queryUser = user
-        const createUser = await MongoModule.createUser(queryUser)
+        const createUser = await MongooseModule.createUser(queryUser)
         if (typeof(createUser) !== 'object') {
             return { messages: "Error" }
         }
@@ -20,7 +21,7 @@ class RegisterUser {
     }
 
     async login({ dataLogin }) {
-        const dataUser = await MongoModule.login(dataLogin)
+        const dataUser = await MongooseModule.login(dataLogin)
         const match = await bcrypt.compare(dataLogin.password, dataUser[0].password)
         if (match === true) {
             return auth.sign(dataUser)
@@ -43,6 +44,13 @@ class RegisterUser {
         https.get(url + amountPokemon, (response) => {
             return JSON.parse(response)
         })
+    }
+
+    async shipping() {
+        console.log("SHIPPING")
+        const dataShipping = MongoModule.dataShippings()
+        console.log(dataShipping)
+        return dataShipping
     }
 }
 

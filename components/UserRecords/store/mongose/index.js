@@ -1,9 +1,9 @@
 'use strict'
 
-const db = require('../../lib/mongodb')
+const dbMongosse = require('../../../lib/mongose')
 const Model = require('./modelCreate')
 const bcrypt = require('bcrypt')
-const utils = require('../../utils/response').default
+const utils = require('../../../utils/response').default
 
 const createUser = async(user) => {
     try {
@@ -20,7 +20,6 @@ const createUser = async(user) => {
 const login = async(user) => {
     try {
         const userEmail = await Model.find({ email: user.email })
-            // return JSON.stringify(userEmail)
         return userEmail
     } catch (error) {
         return error
