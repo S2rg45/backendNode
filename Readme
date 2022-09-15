@@ -1,0 +1,27 @@
+# Rocketfy
+
+Prueba tecnica para desarrollador fullstack
+
+## Installation
+
+Se tiene que tener nodejs y npm instalado en la maquina y ejecutar el siguiente comando en la raiz del proyecto
+
+```bash
+npm install
+```
+
+## Usage
+
+```javascript
+const https = requiere('https')
+
+const host = 'localhost:3001/api/rocketfly/'
+https.post(host+'pokemonAll')
+https.post(host+'pokemonId')
+https.post(host+'login')
+https.post(host+'register')
+https.post(host+'shipping')
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
